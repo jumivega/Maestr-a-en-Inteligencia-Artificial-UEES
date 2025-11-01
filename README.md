@@ -3,7 +3,7 @@
 Proyecto de Maestría en Inteligencia Artificial — Asignatura: Aprendizaje Automático
 
 
-Descripción General
+# Descripción General
 
 Este proyecto tiene como objetivo comparar, analizar y seleccionar el mejor clasificador supervisado entre tres modelos:
 
@@ -15,7 +15,7 @@ Los modelos fueron entrenados sobre el conjunto Fashion-MNIST, que contiene imá
 Se realiza un análisis integral que incluye exploración de datos, preprocesamiento, entrenamiento, comparación de métricas y análisis de costo computacional.
 
 
-Objetivos del Proyecto
+# Objetivos del Proyecto
 
 1.	Entrenar tres clasificadores supervisados sobre el dataset Fashion-MNIST.
 2.	Evaluar su rendimiento con métricas de clasificación: Accuracy, Recall y F1-score.
@@ -24,7 +24,7 @@ Objetivos del Proyecto
 5.	Aplicar buenas prácticas colaborativas mediante GitHub.
 
 
-Dataset: Fashion-MNIST
+# Dataset: Fashion-MNIST
 
 •	Tamaño: 70 000 imágenes (60 000 entrenamiento / 10 000 prueba).
 •	Formato: Escala de grises (28×28 píxeles).
@@ -34,7 +34,7 @@ Dataset: Fashion-MNIST
 Dataset ampliamente utilizado como benchmark moderno en aprendizaje automático y visión por computadora.
 
 
-Análisis Exploratorio de Datos (EDA)
+# Análisis Exploratorio de Datos (EDA)
 
 •	Se verificó el balance de clases (~6 000 imágenes por categoría).
 •	Se confirmaron datos completos, sin nulos ni inconsistencias.
@@ -50,7 +50,7 @@ Ejemplo de visualización:
             plt.title(y_train[i])
         plt.show()
 
-Preprocesamiento
+# Preprocesamiento
 
 •	Aplanamiento: conversión de cada imagen a vector de 784 características.
 •	Normalización: división por 255 para escalar valores entre [0,1].
@@ -58,7 +58,7 @@ Preprocesamiento
 •	Reentrenamiento del SVM: uso completo del dataset (60 000 train / 10 000 test).
 
 
-Modelos Clasificadores
+# Modelos Clasificadores
 
 SVM (Support Vector Machine)
 
@@ -81,7 +81,7 @@ Random Forest
 •	Desventajas: mayor demanda de memoria que un árbol simple.
 
 
-Resultados Comparativos
+# Resultados Comparativos
 
         Modelo	               Accuracy      Recall (macro)   F1-score (macro)    Dataset usado
         --------------------------------------------------------------------------------------------------
@@ -90,14 +90,14 @@ Resultados Comparativos
         Árbol de Decisión       0.81	        0.81	        0.81	        60 000 train / 10 000 test
         
 
-Interpretación
+#cInterpretación
 
 • El SVM reentrenado alcanza el mejor desempeño general, pero con alto costo de cómputo.
 • El Random Forest logra un excelente balance entre precisión y eficiencia.
 • El Árbol de Decisión es ideal cuando se requiere interpretabilidad y bajo tiempo de ejecución.
 
 
-Análisis de Costo Computacional
+# Análisis de Costo Computacional
 
         Modelo	        Estrategia	                  Tiempo Estimado	            Observaciones
         ----------------------------------------------------------------------------------------------------------------
@@ -108,7 +108,7 @@ Análisis de Costo Computacional
 Nota: El costo del SVM crece cuadráticamente con el número de muestras; por eso se recomienda GPU o muestreo para experimentos iniciales.
 
 
-Conclusiones
+# Conclusiones
 
 • El SVM (C=1) logra el mejor accuracy (~0.90) con el dataset completo, pero su entrenamiento requiere más recursos.
 • El Random Forest ofrece el mejor equilibrio entre rendimiento, escalabilidad y facilidad de uso.
