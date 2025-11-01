@@ -81,12 +81,12 @@ Random Forest
 
 Resultados Comparativos
 
-Modelo	                Accuracy     Recall (macro)   F1-score (macro)    Dataset usado
---------------------------------------------------------------------------------------------------
-SVM (C=1, RBF)	        0.89 – 0.90	0.89	        0.89	        60 000 train / 10 000 test
-Random Forest	        0.86	        0.86	        0.86	        60 000 train / 10 000 test
-Árbol de Decisión	0.81	        0.81	        0.81	        60 000 train / 10 000 test
-
+        Modelo	                Accuracy     Recall (macro)   F1-score (macro)    Dataset usado
+        --------------------------------------------------------------------------------------------------
+        SVM (C=1, RBF)	        0.89 – 0.90	0.89	        0.89	        60 000 train / 10 000 test
+        Random Forest	        0.86	        0.86	        0.86	        60 000 train / 10 000 test
+        Árbol de Decisión	0.81	        0.81	        0.81	        60 000 train / 10 000 test
+        
 
 Interpretación
 
@@ -97,11 +97,11 @@ Interpretación
 
 Análisis de Costo Computacional
 
-Modelo	        Estrategia	                  Tiempo Estimado	            Observaciones
-----------------------------------------------------------------------------------------------------------------
-SVM	        Reentrenamiento completo	 2.5 h CPU / 25 min GPU	      Alto costo, precisión superior (~0.90).
-Árbol	        Entrenamiento completo	         <2 min	                      Muy eficiente.
-Random Forest	120 árboles, profundidad 1       ~5 min	                      Balance ideal entre tiempo y rendimiento.
+        Modelo	        Estrategia	                  Tiempo Estimado	            Observaciones
+        ----------------------------------------------------------------------------------------------------------------
+        SVM	        Reentrenamiento completo	 2.5 h CPU / 25 min GPU	      Alto costo, precisión superior (~0.90).
+        Árbol	        Entrenamiento completo	         <2 min	                      Muy eficiente.
+        Random Forest	120 árboles, profundidad 1       ~5 min	                      Balance ideal entre tiempo y rendimiento.
 
 Nota: El costo del SVM crece cuadráticamente con el número de muestras; por eso se recomienda GPU o muestreo para experimentos iniciales.
 
