@@ -1,6 +1,7 @@
 # COMPARATIVA Y SELECCIÓN DE CLASIFICADORES: SVM, RANDOM FOREST Y ÁRBOL DE DECISIÓN APLICADOS AL DATASET FASHION-MNIST
 
 Proyecto de Maestría en Inteligencia Artificial — Asignatura: Aprendizaje Automático
+
 Integrantes:  Juan Miguel Velandia, Jaime Alberto Sierra, Oscar Mauricio Parra
 
 
@@ -41,15 +42,6 @@ Dataset ampliamente utilizado como benchmark moderno en aprendizaje automático 
 •	Se confirmaron datos completos, sin nulos ni inconsistencias.
 •	Se visualizaron ejemplos aleatorios para validar el dominio visual.
 •	Se analizó la distribución de intensidades de píxeles (0–255).
-
-Ejemplo de visualización:
-
-        plt.figure(figsize=(6,6))
-        for i in range(9):
-            plt.subplot(3,3,i+1)
-            plt.imshow(X_train[i].reshape(28,28), cmap='gray')
-            plt.title(y_train[i])
-        plt.show()
 
 # Preprocesamiento
 
