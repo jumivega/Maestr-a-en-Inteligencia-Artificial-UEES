@@ -8,9 +8,9 @@ Integrantes: Juan Miguel Velandia, Jaime Alberto Sierra, Oscar Mauricio Parra
 
 Este proyecto tiene como objetivo comparar, analizar y seleccionar el mejor clasificador supervisado entre tres modelos:
 
- * SVM (Support Vector Machine)
- * Random Forest (Bosque Aleatorio)
- * Árbol de Decisión (Decision Tree)
+ * SVM (Support Vector Machine).
+ * Random Forest (Bosque Aleatorio).
+ * Árbol de Decisión (Decision Tree).
 
 Los modelos fueron entrenados sobre el conjunto Fashion-MNIST, que contiene imágenes de prendas de vestir en escala de grises (28×28 píxeles).
 Se realiza un análisis integral que incluye exploración de datos, preprocesamiento, entrenamiento, comparación de métricas y análisis de costo computacional.
@@ -27,10 +27,10 @@ Se realiza un análisis integral que incluye exploración de datos, preprocesami
 
 # Dataset: Fashion-MNIST
 
- * Tamaño: 70 000 imágenes (60 000 entrenamiento / 10 000 prueba)
- * Formato: Escala de grises (28×28 píxeles)
- * Clases: 10 categorías balanceadas (camiseta, pantalón, abrigo, zapato, etc.)
- * Fuente: Zalando Research
+ * Tamaño: 70 000 imágenes (60 000 entrenamiento / 10 000 prueba).
+ * Formato: Escala de grises (28×28 píxeles).
+ * Clases: 10 categorías balanceadas (camiseta, pantalón, abrigo, zapato, etc.).
+ * Fuente: Zalando Research.
 
 Dataset ampliamente utilizado como benchmark moderno en aprendizaje automático y visión por computadora.
 
