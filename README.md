@@ -81,11 +81,11 @@ Random Forest
 
 Resultados Comparativos
 
-        Modelo	                Accuracy     Recall (macro)   F1-score (macro)    Dataset usado
+        Modelo	               Accuracy     Recall (macro)   F1-score (macro)    Dataset usado
         --------------------------------------------------------------------------------------------------
-        SVM (C=1, RBF)	        0.89 – 0.90	0.89	        0.89	        60 000 train / 10 000 test
-        Random Forest	        0.86	        0.86	        0.86	        60 000 train / 10 000 test
-        Árbol de Decisión	0.81	        0.81	        0.81	        60 000 train / 10 000 test
+        SVM (C=1, RBF)	          0.89 – 0.90	0.89	        0.89	        60 000 train / 10 000 test
+        Random Forest	           0.86	        0.86	        0.86	        60 000 train / 10 000 test
+        Árbol de Decisión        0.81	        0.81	        0.81	        60 000 train / 10 000 test
         
 
 Interpretación
