@@ -37,40 +37,40 @@ Dataset ampliamente utilizado como benchmark moderno en aprendizaje automático 
 
 # Análisis Exploratorio de Datos (EDA)
 
-• Se verificó el balance de clases (~6 000 imágenes por categoría).
-• Se confirmaron datos completos, sin nulos ni inconsistencias.
-• Se visualizaron ejemplos aleatorios para validar el dominio visual.
-• Se analizó la distribución de intensidades de píxeles (0–255).
+ * Se verificó el balance de clases (~6 000 imágenes por categoría).
+ * Se confirmaron datos completos, sin nulos ni inconsistencias.
+ * Se visualizaron ejemplos aleatorios para validar el dominio visual.
+ * Se analizó la distribución de intensidades de píxeles (0–255).
 
 # Preprocesamiento
 
-• Aplanamiento: conversión de cada imagen a vector de 784 características.
-• Normalización: división por 255 para escalar valores entre [0,1].
-• División 80/20: separación estratificada entrenamiento/prueba.
-• Reentrenamiento del SVM: uso completo del dataset (60 000 train / 10 000 test).
+ * Aplanamiento: conversión de cada imagen a vector de 784 características.
+ * Normalización: división por 255 para escalar valores entre [0,1].
+ * División 80/20: separación estratificada entrenamiento/prueba.
+ * Reentrenamiento del SVM: uso completo del dataset (60 000 train / 10 000 test).
 
 
 # Modelos Clasificadores
 
 SVM (Support Vector Machine)
 
-• Kernel: RBF.
-• Parámetro C: 1 (óptimo según validación cruzada).
-• Entrenamiento: 60 000 muestras / 10 000 de prueba.
-• Tiempo estimado: ~2.5 h CPU o ~25 min en GPU T4.
-• Ventajas: alta generalización y precisión (~0.90).
-• Desventajas: costo computacional elevado.
+ * Kernel: RBF.
+ * Parámetro C: 1 (óptimo según validación cruzada).
+ * Entrenamiento: 60 000 muestras / 10 000 de prueba.
+ * Tiempo estimado: ~2.5 h CPU o ~25 min en GPU T4.
+ * Ventajas: alta generalización y precisión (~0.90).
+ * Desventajas: costo computacional elevado.
 
 Árbol de Decisión
 
-• Hiperparámetros: max_depth=15, min_samples_split=5, min_samples_leaf=2.
-• Ventajas: interpretabilidad y rapidez de entrenamiento.
-• Desventajas: tendencia al sobreajuste y menor precisión global (~0.81).
+ * Hiperparámetros: max_depth=15, min_samples_split=5, min_samples_leaf=2.
+ * Ventajas: interpretabilidad y rapidez de entrenamiento.
+ * Desventajas: tendencia al sobreajuste y menor precisión global (~0.81).
 
 Random Forest
-• Configuración: n_estimators=120, max_depth=13.
-• Ventajas: robustez, mayor precisión (0.86) y resistencia al ruido.
-• Desventajas: mayor demanda de memoria que un árbol simple.
+ * Configuración: n_estimators=120, max_depth=13.
+ * Ventajas: robustez, mayor precisión (0.86) y resistencia al ruido.
+ * Desventajas: mayor demanda de memoria que un árbol simple.
 
 
 # Resultados Comparativos
@@ -84,9 +84,9 @@ Random Forest
 
 # Interpretación
 
-• El SVM reentrenado alcanza el mejor desempeño general, pero con alto costo de cómputo.
-• El Random Forest logra un excelente balance entre precisión y eficiencia.
-• El Árbol de Decisión es ideal cuando se requiere interpretabilidad y bajo tiempo de ejecución.
+ * El SVM reentrenado alcanza el mejor desempeño general, pero con alto costo de cómputo.
+ * El Random Forest logra un excelente balance entre precisión y eficiencia.
+ * El Árbol de Decisión es ideal cuando se requiere interpretabilidad y bajo tiempo de ejecución.
 
 
 # Análisis de Costo Computacional
@@ -102,11 +102,8 @@ Nota: El costo del SVM crece cuadráticamente con el número de muestras; por es
 
 # Conclusiones
 
-• El SVM (C=1) logra el mejor accuracy (~0.90) con el dataset completo, pero su entrenamiento requiere más recursos.
-
-• El Random Forest ofrece el mejor equilibrio entre rendimiento, escalabilidad y facilidad de uso.
-
-• El Árbol de Decisión sigue siendo una excelente alternativa en escenarios de recursos limitados o donde la interpretabilidad es clave.
-
-• En general, se recomienda el uso de Random Forest para proyectos de aprendizaje automático en entornos académicos y productivos.
+ * El SVM (C=1) logra el mejor accuracy (~0.90) con el dataset completo, pero su entrenamiento requiere más recursos.
+ * El Random Forest ofrece el mejor equilibrio entre rendimiento, escalabilidad y facilidad de uso.
+ * El Árbol de Decisión sigue siendo una excelente alternativa en escenarios de recursos limitados o donde la interpretabilidad es clave.
+ * En general, se recomienda el uso de Random Forest para proyectos de aprendizaje automático en entornos académicos y productivos.
 
