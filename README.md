@@ -82,7 +82,7 @@ Random Forest
         Árbol de Decisión       0.81	        0.81	        0.81	        60 000 train / 10 000 test
         
 
-#cInterpretación
+# Interpretación
 
 • El SVM reentrenado alcanza el mejor desempeño general, pero con alto costo de cómputo.
 • El Random Forest logra un excelente balance entre precisión y eficiencia.
@@ -103,7 +103,10 @@ Nota: El costo del SVM crece cuadráticamente con el número de muestras; por es
 # Conclusiones
 
 • El SVM (C=1) logra el mejor accuracy (~0.90) con el dataset completo, pero su entrenamiento requiere más recursos.
+
 • El Random Forest ofrece el mejor equilibrio entre rendimiento, escalabilidad y facilidad de uso.
+
 • El Árbol de Decisión sigue siendo una excelente alternativa en escenarios de recursos limitados o donde la interpretabilidad es clave.
+
 • En general, se recomienda el uso de Random Forest para proyectos de aprendizaje automático en entornos académicos y productivos.
 
