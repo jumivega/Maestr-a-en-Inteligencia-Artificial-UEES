@@ -1,6 +1,6 @@
 # COMPARATIVA Y SELECCIÓN DE CLASIFICADORES: SVM, RANDOM FOREST Y ÁRBOL DE DECISIÓN APLICADOS AL DATASET FASHION-MNIST
-
 Proyecto de Maestría en Inteligencia Artificial — Asignatura: Aprendizaje Automático
+
 Integrantes: Juan Miguel Velandia, Jaime Alberto Sierra, Oscar Mauricio Parra
 
 
