@@ -3,6 +3,7 @@
 COMPARATIVA Y SELECCIÓN DE CLASIFICADORES: SVM, RANDOM FOREST Y ÁRBOL DE DECISIÓN APLICADOS AL DATASET FASHION-MNIST
 Proyecto de Maestría en Inteligencia Artificial — Asignatura: Aprendizaje Automático
 
+
 Descripción General
 
 Este proyecto tiene como objetivo comparar, analizar y seleccionar el mejor clasificador supervisado entre tres modelos:
@@ -14,6 +15,7 @@ Este proyecto tiene como objetivo comparar, analizar y seleccionar el mejor clas
 Los modelos fueron entrenados sobre el conjunto Fashion-MNIST, que contiene imágenes de prendas de vestir en escala de grises (28×28 píxeles).
 Se realiza un análisis integral que incluye exploración de datos, preprocesamiento, entrenamiento, comparación de métricas y análisis de costo computacional.
 
+
 Objetivos del Proyecto
 
 1.	Entrenar tres clasificadores supervisados sobre el dataset Fashion-MNIST.
@@ -21,6 +23,7 @@ Objetivos del Proyecto
 3.	Analizar los costos de cómputo y escalabilidad de cada modelo.
 4.	Determinar cuál modelo ofrece el mejor equilibrio entre precisión y eficiencia.
 5.	Aplicar buenas prácticas colaborativas mediante GitHub.
+
 
 Dataset: Fashion-MNIST
 
