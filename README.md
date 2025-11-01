@@ -2,18 +2,18 @@
 Trabajos asociados a las asignaturas de la Maestría en IA - Grupo 3
 Integrantes:  Juan Miguel Velandia, Jaime Alberto Sierra, Oscar Mauricio Parra
 
----- RESUMEN DEL PROBLEMA ----
+RESUMEN DEL PROBLEMA
 
 El problema central consiste en clasificar imágenes de prendas de vestir del catálogo de Zalando utilizando técnicas de aprendizaje supervisado, empleando el conjunto de datos Fashion-MNIST.
 
 Este dataset contiene 70,000 imágenes en escala de grises de 28x28 píxeles (60,000 para entrenamiento y 10,000 para prueba), donde cada imagen pertenece a una de 10 categorías de ropa (camiseta, pantalón, suéter, vestido, zapato, etc.). Cada fila del dataset representa una imagen convertida a un vector de 784 valores de intensidad de píxeles (0–255).
 
--- Objetivo del análisis--
+Objetivo del análisis:
 Desarrollar, entrenar y comparar distintos modelos de clasificación (Árboles de Decisión, Random Forest y SVM) para determinar cuál de ellos logra una mejor precisión y desempeño al identificar correctamente las prendas de vestir a partir de sus características visuales.
 
 En resumen, el proyecto busca evaluar la capacidad de tres algoritmos clásicos de Machine Learning para resolver un problema de clasificación multiclase de imágenes.
 
----- ¿QUÉ METODOLOGÍA ES LA UTILIZADA? ----
+METODOLOGÍA UTILIZADA
 
 El proyecto sigue una metodología estructurada de aprendizaje supervisado, aplicada paso a paso para desarrollar, entrenar y comparar distintos modelos de clasificación. Esta metodología es la base de la mayoría de los proyectos de Machine Learning (ML) y busca garantizar resultados precisos y reproducibles.
 
