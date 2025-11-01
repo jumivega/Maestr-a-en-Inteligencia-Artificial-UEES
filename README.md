@@ -31,6 +31,7 @@ Dataset: Fashion-MNIST
 
 Dataset ampliamente utilizado como benchmark moderno en aprendizaje automático y visión por computadora.
 
+
 Análisis Exploratorio de Datos (EDA)
 
 •	Se verificó el balance de clases (~6 000 imágenes por categoría).
@@ -54,6 +55,7 @@ Preprocesamiento
 •	División 80/20: separación estratificada entrenamiento/prueba.
 •	Reentrenamiento del SVM: uso completo del dataset (60 000 train / 10 000 test).
 
+
 Modelos Clasificadores
 
 SVM (Support Vector Machine)
@@ -76,6 +78,32 @@ Random Forest
 •	Ventajas: robustez, mayor precisión (0.86) y resistencia al ruido.
 •	Desventajas: mayor demanda de memoria que un árbol simple.
 
+
 Resultados Comparativos
+
+Modelo	                Accuracy     Recall (macro)   F1-score (macro)    Dataset usado
+--------------------------------------------------------------------------------------------------
+SVM (C=1, RBF)	        0.89 – 0.90	0.89	        0.89	        60 000 train / 10 000 test
+Random Forest	        0.86	        0.86	        0.86	        60 000 train / 10 000 test
+Árbol de Decisión	0.81	        0.81	        0.81	        60 000 train / 10 000 test
+
+
+Interpretación
+
+• El SVM reentrenado alcanza el mejor desempeño general, pero con alto costo de cómputo.
+• El Random Forest logra un excelente balance entre precisión y eficiencia.
+• El Árbol de Decisión es ideal cuando se requiere interpretabilidad y bajo tiempo de ejecución.
+
+
+Análisis de Costo Computacional
+
+Modelo	        Estrategia	                  Tiempo Estimado	            Observaciones
+----------------------------------------------------------------------------------------------------------------
+SVM	        Reentrenamiento completo	 2.5 h CPU / 25 min GPU	      Alto costo, precisión superior (~0.90).
+Árbol	        Entrenamiento completo	         <2 min	                      Muy eficiente.
+Random Forest	120 árboles, profundidad 1       ~5 min	                      Balance ideal entre tiempo y rendimiento.
+
+Nota: El costo del SVM crece cuadráticamente con el número de muestras; por eso se recomienda GPU o muestreo para experimentos iniciales.
+
 
 
