@@ -1,80 +1,109 @@
 # Maestr-a-en-Inteligencia-Artificial-UEES
-Trabajos asociados a las asignaturas de la Maestría en IA - Grupo 3
-Integrantes:  Juan Miguel Velandia, Jaime Alberto Sierra, Oscar Mauricio Parra
 
-RESUMEN DEL PROBLEMA
+COMPARATIVA Y SELECCIÓN DE CLASIFICADORES: SVM, RANDOM FOREST Y ÁRBOL DE DECISIÓN APLICADOS AL DATASET FASHION-MNIST
+Proyecto de Maestría en Inteligencia Artificial — Asignatura: Aprendizaje Automático
 
-El problema central consiste en clasificar imágenes de prendas de vestir del catálogo de Zalando utilizando técnicas de aprendizaje supervisado, empleando el conjunto de datos Fashion-MNIST.
+Descripción General
 
-Este dataset contiene 70,000 imágenes en escala de grises de 28x28 píxeles (60,000 para entrenamiento y 10,000 para prueba), donde cada imagen pertenece a una de 10 categorías de ropa (camiseta, pantalón, suéter, vestido, zapato, etc.). Cada fila del dataset representa una imagen convertida a un vector de 784 valores de intensidad de píxeles (0–255).
+Este proyecto tiene como objetivo comparar, analizar y seleccionar el mejor clasificador supervisado entre tres modelos:
 
-Objetivo del análisis:
-Desarrollar, entrenar y comparar distintos modelos de clasificación (Árboles de Decisión, Random Forest y SVM) para determinar cuál de ellos logra una mejor precisión y desempeño al identificar correctamente las prendas de vestir a partir de sus características visuales.
+•	SVM (Support Vector Machine)
+•	Random Forest (Bosque Aleatorio)
+•	Árbol de Decisión (Decision Tree)
 
-En resumen, el proyecto busca evaluar la capacidad de tres algoritmos clásicos de Machine Learning para resolver un problema de clasificación multiclase de imágenes.
+Los modelos fueron entrenados sobre el conjunto Fashion-MNIST, que contiene imágenes de prendas de vestir en escala de grises (28×28 píxeles).
+Se realiza un análisis integral que incluye exploración de datos, preprocesamiento, entrenamiento, comparación de métricas y análisis de costo computacional.
 
-METODOLOGÍA UTILIZADA
+Objetivos del Proyecto
 
-El proyecto sigue una metodología estructurada de aprendizaje supervisado, aplicada paso a paso para desarrollar, entrenar y comparar distintos modelos de clasificación. Esta metodología es la base de la mayoría de los proyectos de Machine Learning (ML) y busca garantizar resultados precisos y reproducibles.
+1.	Entrenar tres clasificadores supervisados sobre el dataset Fashion-MNIST.
+2.	Evaluar su rendimiento con métricas de clasificación: Accuracy, Recall y F1-score.
+3.	Analizar los costos de cómputo y escalabilidad de cada modelo.
+4.	Determinar cuál modelo ofrece el mejor equilibrio entre precisión y eficiencia.
+5.	Aplicar buenas prácticas colaborativas mediante GitHub.
 
-A continuación, se describe cada etapa utilizada en el proyecto:
+Dataset: Fashion-MNIST
 
-1. Recolección y exploración de los datos:
-Se parte del conjunto de datos Fashion-MNIST, que contiene imágenes en escala de grises de diferentes prendas de vestir (camisetas, zapatos, bolsos, etc.). Cada imagen de 28x28 píxeles se transforma en una fila con 784 valores numéricos, y una etiqueta (de 0 a 9) que indica el tipo de prenda.
+•	Tamaño: 70 000 imágenes (60 000 entrenamiento / 10 000 prueba).
+•	Formato: Escala de grises (28×28 píxeles).
+•	Clases: 10 categorías balanceadas (camiseta, pantalón, abrigo, zapato, etc.).
+•	Fuente: Zalando Research.
 
-En esta etapa se revisa:
-    •	Estructura y dimensiones del dataset.
-    •	Balance de clases (que todas las categorías estén representadas).
-    •	Muestras visuales para confirmar que las imágenes se leen correctamente.
-
-2. Preparación y preprocesamiento de datos:
-Antes de entrenar los modelos, los datos deben estar limpios y en el formato adecuado. Se aplicaron las siguientes transformaciones:
-
-    •	Normalización: Se escalan los valores de los píxeles de 0–255 a 0–1, lo que mejora la estabilidad de los algoritmos.
-    •	División del dataset: Se separan los datos en dos conjuntos:
-        - Entrenamiento (60,000 imágenes) → se usa para enseñar al modelo.
-        - Prueba (10,000 imágenes) → se usa para evaluar el rendimiento final.
-    •	Verificación de calidad: Se asegura que no haya valores faltantes ni duplicados.
-
-    Este paso garantiza que los modelos aprendan patrones reales y no ruido.
-
-3. Entrenamiento de modelos:
-En esta fase se aplican tres algoritmos de clasificación con el mismo conjunto de datos para comparar su desempeño:
-
-    - Árbol de Decisión: Divide los datos en reglas simples de “si-entonces” hasta llegar a una predicción. Fácil de interpretar.
-    - Random Forest: Combina muchos árboles para mejorar la precisión y reducir errores. Es robusto y confiable.
-    - SVM (Máquina de Vectores de Soporte): Encuentra la mejor frontera que separa las clases en el espacio de datos. Muy preciso, pero más costoso de          entrenar.
-
-    Cada modelo se entrena con el conjunto de entrenamiento (X_train, y_train) y se evalúa con el conjunto de prueba (X_test, y_test).
-
-4. Evaluación del rendimiento:
-Para medir qué tan bien funciona cada modelo, se utilizan métricas cuantitativas:
-
-    •	Accuracy (Precisión): porcentaje de aciertos del modelo.
-    •	Matriz de confusión: muestra cuántas imágenes fueron clasificadas correctamente y cuáles se confundieron.
-    •	Tiempo de entrenamiento: ayuda a evaluar la eficiencia computacional.
-
-    Estas métricas permiten comparar de forma objetiva el desempeño entre modelos.
-
-5. Comparación y selección del modelo óptimo:
-Una vez entrenados los tres modelos, se analizan los resultados:
-
-    •	Árbol de Decisión: interpretación clara, pero tiende a sobreajustarse.
-    •	Random Forest: excelente equilibrio entre precisión y estabilidad.
-    •	SVM: precisión alta, pero mayor demanda de cómputo.
-
-El Random Forest se identifica como el modelo más equilibrado y recomendable para producción, por combinar alta precisión, buena generalización y tiempos de ejecución razonables.
-
-6. Iteración y mejora continua:
-Finalmente, se propone una fase iterativa donde se pueden:
-
-    •	Ajustar hiperparámetros.
-    •	Refinar características.
-    •	Volver a entrenar los modelos.
-
-    Este ciclo de mejora es esencial en cualquier proyecto de Machine Learning, ya que permite optimizar resultados con base en nuevas métricas o datos adicionales.
+Dataset ampliamente utilizado como benchmark moderno en aprendizaje automático y visión por computadora.
 
 
+Análisis Exploratorio de Datos (EDA)
+
+•	Se verificó el balance de clases (~6 000 imágenes por categoría).
+•	Se confirmaron datos completos, sin nulos ni inconsistencias.
+•	Se visualizaron ejemplos aleatorios para validar el dominio visual.
+•	Se analizó la distribución de intensidades de píxeles (0–255).
+
+Ejemplo de visualización:
+
+        plt.figure(figsize=(6,6))
+        for i in range(9):
+            plt.subplot(3,3,i+1)
+            plt.imshow(X_train[i].reshape(28,28), cmap='gray')
+            plt.title(y_train[i])
+        plt.show()
+
+Preprocesamiento
+
+•	Aplanamiento: conversión de cada imagen a vector de 784 características.
+•	Normalización: división por 255 para escalar valores entre [0,1].
+•	División 80/20: separación estratificada entrenamiento/prueba.
+•	Reentrenamiento del SVM: uso completo del dataset (60 000 train / 10 000 test).
+
+
+Modelos Clasificadores
+
+SVM (Support Vector Machine)
+
+•	Kernel: RBF.
+•	Parámetro C: 1 (óptimo según validación cruzada).
+•	Entrenamiento: 60 000 muestras / 10 000 de prueba.
+•	Tiempo estimado: ~2.5 h CPU o ~25 min en GPU T4.
+•	Ventajas: alta generalización y precisión (~0.90).
+•	Desventajas: costo computacional elevado.
+
+Árbol de Decisión
+
+•	Hiperparámetros: max_depth=15, min_samples_split=5, min_samples_leaf=2.
+•	Ventajas: interpretabilidad y rapidez de entrenamiento.
+•	Desventajas: tendencia al sobreajuste y menor precisión global (~0.81).
+
+Random Forest
+•	Configuración: n_estimators=120, max_depth=13.
+•	Ventajas: robustez, mayor precisión (0.86) y resistencia al ruido.
+•	Desventajas: mayor demanda de memoria que un árbol simple.
+
+
+Resultados Comparativos
+
+        Modelo	               Accuracy      Recall (macro)   F1-score (macro)    Dataset usado
+        --------------------------------------------------------------------------------------------------
+        SVM (C=1, RBF)	        0.89 – 0.90	    0.89	        0.89	        60 000 train / 10 000 test
+        Random Forest	        0.86	        0.86	        0.86	        60 000 train / 10 000 test
+        Árbol de Decisión       0.81	        0.81	        0.81	        60 000 train / 10 000 test
+        
+
+Interpretación
+
+• El SVM reentrenado alcanza el mejor desempeño general, pero con alto costo de cómputo.
+• El Random Forest logra un excelente balance entre precisión y eficiencia.
+• El Árbol de Decisión es ideal cuando se requiere interpretabilidad y bajo tiempo de ejecución.
+
+
+Análisis de Costo Computacional
+
+        Modelo	        Estrategia	                  Tiempo Estimado	            Observaciones
+        ----------------------------------------------------------------------------------------------------------------
+        SVM	            Reentrenamiento completo	    2.5 h CPU / 25 min GPU	     Alto costo, precisión superior (~0.90).
+        Árbol	        Entrenamiento completo	         <2 min	                      Muy eficiente.
+        Random Forest	120 árboles, profundidad 1       ~5 min	                      Balance ideal entre tiempo y rendimiento.
+
+Nota: El costo del SVM crece cuadráticamente con el número de muestras; por eso se recomienda GPU o muestreo para experimentos iniciales.
 
 
 
