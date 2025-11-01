@@ -18,11 +18,11 @@ Se realiza un análisis integral que incluye exploración de datos, preprocesami
 
 # Objetivos del Proyecto
 
-1.	Entrenar tres clasificadores supervisados sobre el dataset Fashion-MNIST.
-2.	Evaluar su rendimiento con métricas de clasificación: Accuracy, Recall y F1-score.
-3.	Analizar los costos de cómputo y escalabilidad de cada modelo.
-4.	Determinar cuál modelo ofrece el mejor equilibrio entre precisión y eficiencia.
-5.	Aplicar buenas prácticas colaborativas mediante GitHub.
+1. Entrenar tres clasificadores supervisados sobre el dataset Fashion-MNIST.
+2. Evaluar su rendimiento con métricas de clasificación: Accuracy, Recall y F1-score.
+3. Analizar los costos de cómputo y escalabilidad de cada modelo.
+4. Determinar cuál modelo ofrece el mejor equilibrio entre precisión y eficiencia.
+5. Aplicar buenas prácticas colaborativas mediante GitHub.
 
 
 # Dataset: Fashion-MNIST
