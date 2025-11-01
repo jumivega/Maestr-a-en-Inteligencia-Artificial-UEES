@@ -99,7 +99,7 @@ Análisis de Costo Computacional
 
         Modelo	        Estrategia	                  Tiempo Estimado	            Observaciones
         ----------------------------------------------------------------------------------------------------------------
-        SVM	        Reentrenamiento completo	 2.5 h CPU / 25 min GPU	      Alto costo, precisión superior (~0.90).
+        SVM	          Reentrenamiento completo	 2.5 h CPU / 25 min GPU	      Alto costo, precisión superior (~0.90).
         Árbol	        Entrenamiento completo	         <2 min	                      Muy eficiente.
         Random Forest	120 árboles, profundidad 1       ~5 min	                      Balance ideal entre tiempo y rendimiento.
 
