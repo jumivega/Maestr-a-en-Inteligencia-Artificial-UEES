@@ -27,13 +27,10 @@ Se realiza un análisis integral que incluye exploración de datos, preprocesami
 
 # Dataset: Fashion-MNIST
 
-• Tamaño: 70 000 imágenes (60 000 entrenamiento / 10 000 prueba).
-
-• Formato: Escala de grises (28×28 píxeles).
-
-• Clases: 10 categorías balanceadas (camiseta, pantalón, abrigo, zapato, etc.).
-
-• Fuente: Zalando Research.
+ * Tamaño: 70 000 imágenes (60 000 entrenamiento / 10 000 prueba)
+ * Formato: Escala de grises (28×28 píxeles)
+ * Clases: 10 categorías balanceadas (camiseta, pantalón, abrigo, zapato, etc.)
+ * Fuente: Zalando Research
 
 Dataset ampliamente utilizado como benchmark moderno en aprendizaje automático y visión por computadora.
 
