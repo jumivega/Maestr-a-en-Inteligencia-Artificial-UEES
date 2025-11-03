@@ -1,53 +1,48 @@
-# COMPARATIVA Y SELECCIÓN DE CLASIFICADORES: SVM, RANDOM FOREST Y ÁRBOL DE DECISIÓN APLICADOS AL DATASET FASHION-MNIST
-Proyecto de Maestría en Inteligencia Artificial — Asignatura: Aprendizaje Automático
+# CLASIFICACIÓN DE FASHION-MNIST CON SVM, RANDOM FOREST Y ÁRBOL DE DECISIÓN
 
-Integrantes: Juan Miguel Velandia, Jaime Alberto Sierra, Oscar Mauricio Parra
+Este proyecto desarrolla y compara tres modelos de clasificación supervisada aplicados al dataset Fashion-MNIST: Support Vector Machine (SVM), Random Forest y Árbol de Decisión. El objetivo es analizar su desempeño en la tarea de reconocimiento de patrones en imágenes de ropa en escala de grises.
 
+# Descripción del Dataset
 
-# Descripción General
+Fashion-MNIST es un conjunto de datos de Zalando que contiene 70,000 imágenes en escala de grises de 28x28 píxeles, clasificadas en 10 categorías de prendas. Se utiliza como alternativa más desafiante al clásico MNIST de dígitos escritos a mano. Cada imagen es representada como un vector de 784 valores (uint8), cargados en formato Ubytes por su eficiencia y compatibilidad con NumPy.
 
-Este proyecto tiene como objetivo comparar, analizar y seleccionar el mejor clasificador supervisado entre tres modelos:
+# Objetivos
 
- * SVM (Support Vector Machine).
- * Random Forest (Bosque Aleatorio).
- * Árbol de Decisión (Decision Tree).
+1. Realizar un análisis exploratorio de datos (EDA) para entender la estructura y patrones de Fashion-MNIST.
+2. Entrenar modelos supervisados (SVM, Random Forest, Árbol de Decisión) y comparar su rendimiento.
+3. Analizar métricas de desempeño (accuracy, recall, precision, F1-score) y matrices de confusión.
+4. Documentar el proceso siguiendo buenas prácticas de código y repositorio colaborativo (GitHub).
 
-Los modelos fueron entrenados sobre el conjunto Fashion-MNIST, que contiene imágenes de prendas de vestir en escala de grises (28×28 píxeles).
-Se realiza un análisis integral que incluye exploración de datos, preprocesamiento, entrenamiento, comparación de métricas y análisis de costo computacional.
+# Estructura del repositorio
 
+ * notebooks/: Contiene los Jupyter Notebooks de análisis y modelado (EDA, Preprocesamiento, Modelos, Evaluación).
+ * data/: Contiene el dataset en su conjunto de pruebas y entrenamiento en formato UBytes
+ * figures/: Resultados visuales, gráficos comparativos y matrices de confusión.
+ * README.md: Descripción general del proyecto.
+ * requirements.txt: Es recommendable trabajar con el dataset en formato Ubytes dada su eficiencia con respecto a NumPy.
 
-# Objetivos del Proyecto
+# Metodología
 
-1. Entrenar tres clasificadores supervisados sobre el dataset Fashion-MNIST.
-2. Evaluar su rendimiento con métricas de clasificación: Accuracy, Recall y F1-score.
-3. Analizar los costos de cómputo y escalabilidad de cada modelo.
-4. Determinar cuál modelo ofrece el mejor equilibrio entre precisión y eficiencia.
-5. Aplicar buenas prácticas colaborativas mediante GitHub.
+1. Análisis Exploratorio (EDA): Se verificó balance de clases, ausencia de nulos y distribución de intensidades. Se usaron histograma y boxplots para detectar correlaciones y patrones visuales.
+2. Preprocesamiento: Escalado de píxeles (división por 255), aplanamiento de imágenes (784 features) y división entrenamiento/prueba (80/20).
+3. Modelado:
+   * Árbol de Decisión: Ajuste de hiperparametros 'max_depth' para re entrenar el modelo y controlar sobreajuste.
+   * SVM: Kernel RBF, ajuste de 'C' y 'gamma' mediante GridSearchCV.
+   * Random Forest: Ensamble de 120 árboles y 13 ramas, evaluación de importancia de variables.
+4. Evaluación: Métricas (accuracy, precision, recall, F1), matrices de confusión y visualizaciones.
 
-
-# Dataset: Fashion-MNIST
-
- * Tamaño: 70 000 imágenes (60 000 entrenamiento / 10 000 prueba).
- * Formato: Escala de grises (28×28 píxeles).
- * Clases: 10 categorías balanceadas (camiseta, pantalón, abrigo, zapato, etc.).
- * Fuente: Zalando Research.
-
-Dataset ampliamente utilizado como benchmark moderno en aprendizaje automático y visión por computadora.
-
-
-# Análisis Exploratorio de Datos (EDA)
-
- * Se verificó el balance de clases (~6 000 imágenes por categoría).
  * Se confirmaron datos completos, sin nulos ni inconsistencias.
  * Se visualizaron ejemplos aleatorios para validar el dominio visual.
  * Se analizó la distribución de intensidades de píxeles (0–255).
 
-# Preprocesamiento
+# Resultados y comparación
 
- * Aplanamiento: conversión de cada imagen a vector de 784 características.
- * Normalización: división por 255 para escalar valores entre [0,1].
- * División 80/20: separación estratificada entrenamiento/prueba.
- * Reentrenamiento del SVM: uso completo del dataset (60 000 train / 10 000 test).
+        Modelo	               Accuracy      Recall           F1-score 
+        --------------------------------------------------------------------------------------------------
+        SVM (C=1, RBF)	        0.89 – 0.90	    0.89	        0.89	       
+        Random Forest	        0.86	        0.86	        0.86	        
+        Árbol de Decisión       0.81	        0.81	        0.81	        
+        
 
 
 # Modelos Clasificadores
