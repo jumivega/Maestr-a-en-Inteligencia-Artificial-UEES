@@ -1,4 +1,4 @@
-# CLASIFICACIÓN DE FASHION-MNIST CON SVM, RANDOM FOREST Y ÁRBOL DE DECISIÓN
+# Clasificación de Fashion-MNIST con SVM, Random Forest y Árbol de Decisión
 
 Este proyecto desarrolla y compara tres modelos de clasificación supervisada aplicados al dataset Fashion-MNIST: Support Vector Machine (SVM), Random Forest y Árbol de Decisión. El objetivo es analizar su desempeño en la tarea de reconocimiento de patrones en imágenes de ropa en escala de grises.
 
@@ -26,7 +26,7 @@ URLs Dataset
 
 # Estructura de repositorio
 
- * Notebooks/: Contiene los Jupyter Notebooks de análisis y modelado (EDA, Preprocesamiento, Modelos, Evaluación).
+ * Notebooks/: Contiene el Notebook (Colab) de análisis y modelado (EDA, Preprocesamiento, Modelos, Evaluación).
  * Data/: Contiene el dataset en su conjunto de pruebas y entrenamiento en formato UBytes
  * Figures/: Resultados visuales, gráficos comparativos y matrices de confusión.
  * README.md: Descripción general del proyecto.
