@@ -12,10 +12,10 @@ Fashion-MNIST es un conjunto de datos de Zalando que contiene 70,000 imágenes e
 * train-labels-idx1-ubyte: Archivo binario con las etiquetas del conjunto de entrenamiento (60,000 números entre 0–9). Contiene el Texto binario estructurado.
 
 URLs Dataset
-https://storage.googleapis.com/tensorflow/tf-keras-datasets/train-labels-idx1-ubyte.gz
-https://storage.googleapis.com/tensorflow/tf-keras-datasets/train-images-idx3-ubyte.gz
-https://storage.googleapis.com/tensorflow/tf-keras-datasets/t10k-labels-idx1-ubyte.gz
-https://storage.googleapis.com/tensorflow/tf-keras-datasets/t10k-images-idx3-ubyte.gz
+* https://storage.googleapis.com/tensorflow/tf-keras-datasets/train-labels-idx1-ubyte.gz
+* https://storage.googleapis.com/tensorflow/tf-keras-datasets/train-images-idx3-ubyte.gz
+* https://storage.googleapis.com/tensorflow/tf-keras-datasets/t10k-labels-idx1-ubyte.gz
+* https://storage.googleapis.com/tensorflow/tf-keras-datasets/t10k-images-idx3-ubyte.gz
 
 # Objetivos
 
@@ -24,7 +24,7 @@ https://storage.googleapis.com/tensorflow/tf-keras-datasets/t10k-images-idx3-uby
 3. Analizar métricas de desempeño (accuracy, recall, precision, F1-score) y matrices de confusión.
 4. Documentar el proceso siguiendo buenas prácticas de código y repositorio colaborativo (GitHub).
 
-# Estructura del repositorio
+# Estructura de repositorio
 
  * Notebooks/: Contiene los Jupyter Notebooks de análisis y modelado (EDA, Preprocesamiento, Modelos, Evaluación).
  * Data/: Contiene el dataset en su conjunto de pruebas y entrenamiento en formato UBytes
@@ -34,11 +34,14 @@ https://storage.googleapis.com/tensorflow/tf-keras-datasets/t10k-images-idx3-uby
 # Metodología
 
 1. Análisis Exploratorio (EDA): Se verificó balance de clases, ausencia de nulos y distribución de intensidades. Se usaron histograma y boxplots para detectar correlaciones y patrones visuales.
+
 2. Preprocesamiento: Escalado de píxeles (división por 255), aplanamiento de imágenes (784 features) y división entrenamiento/prueba (80/20).
+
 3. Modelado:
    * Árbol de Decisión: Ajuste de hiperparametros 'max_depth' para re entrenar el modelo y controlar sobreajuste.
    * SVM: Kernel RBF, ajuste de 'C' y 'gamma' mediante GridSearchCV.
    * Random Forest: Ensamble de 120 árboles y 13 ramas, evaluación de importancia de variables.
+
 4. Evaluación: Métricas (accuracy, precision, recall, F1), matrices de confusión y visualizaciones.
  
  * Se confirmaron datos completos, sin nulos ni inconsistencias.
@@ -50,7 +53,7 @@ https://storage.googleapis.com/tensorflow/tf-keras-datasets/t10k-images-idx3-uby
         Modelo	               Accuracy       Recall      F1-score 
         ---------------------------------------------------------------
         Árbol de Decisión 	   0.81   	    0.81	        0.81	       
-        SVM (RBF Kernel)	     0.85	        0.84	        0.84	        
+        SVM (RBF Kernel)	   0.85	        0.84	        0.84	        
         Random Forest          0.85	        0.85	        0.85	        
 
 Random Forest mostró el mejor desempeño general gracias a su capacidad para combinar múltiples árboles y tener un menor costo de procesamiento frente a los otros dos modelos. El SVM logró un alto rendimiento con fronteras no lineales, mientras que el Árbol de Decisión destacó por su interpretabilidad y eficiencia en costo computacional.
@@ -73,5 +76,4 @@ El control de hiperparámetros demostró gran impacto en el rendimiento. Este pr
 Grupo 3 - Maestría en Inteligencia Artificial  
 Oscar Parra | Jaime Sierra | Juan Miguel Velandia  
 Universidad Espíritu Santo (UEES)
-
 
