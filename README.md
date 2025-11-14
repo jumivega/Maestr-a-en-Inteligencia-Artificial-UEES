@@ -142,10 +142,11 @@ Futuras Mejoras
 
 # Conclusiones Metodología Análisis de Clustering No Supervisado en Fashion MNIST
 
-* La combinación de K-Means y DBSCAN proporciona una vista enriquecida del catálogo: segmentación estructurada + detección de excepciones.
-* PCA y t-SNE son herramientas clave para interpretar la estructura de los datos en espacios de menor dimensión.
-* DBSCAN ofrece un valor agregado en contextos donde los errores de clasificación tienen impacto crítico (como catálogos de e-commerce).
-* Se recomienda utilizar ambos enfoques de forma complementaria para mejorar la organización, precisión y limpieza del catálogo visual.
+* Para la visualización de un catálogo de imágenes de moda y detección de outliers, K-Means y DBSCAN ofrecieron perspectivas complementarias. K-Means proporcionó una clasificación de todos los artículos en grupos que, en su mayoría, correspondieron a diferentes tipos de prendas, facilitando así la organización del catálogo por similitud. DBSCAN, por su parte, permitió destacar automáticamente los artículos atípicos y formó unos pocos clústeres confiables para las categorías más distintivas.
+
+* Queda claro que no todas las clases de Fashion-MNIST son separables de forma natural bajo técnicas no supervisadas simples: ciertas prendas se traslapan en apariencia y requieren enfoques más sofisticados para diferenciarse. Aun así, combinar PCA y clustering resultó útil: PCA mejoró la velocidad y efectividad del clustering, y la inspección visual con T-SNE corroboró qué tan bien se formaron los grupos. De hecho, aplicar PCA permitió que DBSCAN encontrara más de un clúster en vez de un único clúster gigante, mostrando el valor de reducir el ruido dimensional.
+
+* Resumiendo, K-Means es adecuado para obtener una vista general estructurada del catálogo (especialmente cuando se espera un número de categorías fijo), mientras que DBSCAN es valioso para depurar dicho catálogo identificando casos atípicos y agrupando solo lo más homogéneo. La combinación de ambos enfoques, junto con reducción de dimensionalidad y un ajuste prudente de parámetros, permite lograr una visualización más correcta del conjunto de imágenes y apoyar la limpieza del catálogo de forma fundamentada. Cada técnica tiene fortalezas y limitaciones claras, por lo que una estrategia híbrida e iterativa (apoyada en visualización y en conocimiento del dominio) resulta ser la vía más eficaz para mejorar la organización del catálogo y minimizar errores en la clasificación de sus prendas.
 
 # Autores
 
