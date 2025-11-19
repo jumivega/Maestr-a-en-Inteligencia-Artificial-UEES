@@ -1,6 +1,6 @@
 # Proyectos Repositorio
 
-En el repo se trabajaron dos proyectos de modelado, Modelos supervisados (SVM, Random Forest y Árbol de Decisión) y modelos no supervisados (K-Means y DBSCAN, PCA, T-SNE). A continuación, se relaciona la información y conclusiones correspondientes a cada proyecto.
+En el repo se trabajaron dos proyectos de modelado, Modelos supervisados (SVM, Random Forest y Árbol de Decisión) y modelos no supervisados (K-Means y DBSCAN, PCA, T-SNE) y técnicas de explicabilidad con Random Forest, LIME y SHAP. A continuación, se relaciona la información y conclusiones correspondientes a cada proyecto.
 
 # Clasificación de Fashion-MNIST con SVM, Random Forest y Árbol de Decisión - Supervisado
 
@@ -9,6 +9,12 @@ Este proyecto desarrolla y compara tres modelos de clasificación supervisada ap
 # Análisis de Clustering No Supervisado en Fashion MNIST
 
 Este proyecto explora el uso de modelos de aprendizaje no supervisado para descubrir patrones y detectar outliers en un conjunto de imágenes de artículos de moda. Utilizando el dataset Fashion MNIST, se aplicaron los algoritmos K-Means y DBSCAN, acompañados de técnicas de reducción de dimensionalidad como PCA y t-SNE, con el objetivo de mejorar la visualización de un catálogo virtual y reducir errores de clasificación.
+
+# Explicabilidad con Random Forest, LIME y SHAP
+
+Este proyecto implementa un modelo de clasificación basado en Random Forest utilizando el dataset Fashion-MNIST. El objetivo principal es incorporar técnicas de explicabilidad con LIME y SHAP para comprender cómo el modelo toma decisiones, qué regiones de una imagen influyen más en las predicciones y cómo evaluar riesgos o sesgos asociados.
+
+En entornos reales, la explicabilidad es esencial para validar modelos, garantizar transparencia y permitir su uso en contextos críticos.
 
 # Descripción del Dataset
 
@@ -39,6 +45,15 @@ URLs Dataset
 3. Comparar el comportamiento y resultados de los modelos K-Means y DBSCAN.
 4. Visualizar la estructura latente de los datos con reducción de dimensionalidad.
 
+# Objetivos Explicabilidad con Random Forest, LIME y SHAP
+
+1. Entrenar un modelo Random Forest sobre Fashion-MNIST. 
+2. Implementar LIME para obtener explicaciones locales.
+3. Implementar SHAP para obtener explicaciones globales.
+4. Comparar ambas técnicas de interpretabilidad.
+5. Visualizar regiones de importancia por clase y por instancia.
+6. Documentar resultados y aprendizajes clave sobre el comportamiento del modelo.
+
 # Estructura de repositorio
 
  * Data/: Contiene el dataset en su conjunto de pruebas y entrenamiento en formato UBytes
@@ -46,7 +61,9 @@ URLs Dataset
  * Figures/ModelosSupervisados: Resultados visuales, gráficos comparativos y matrices de confusión.
  * Notebooks/ModelosNoSupervisados: ipynb con todo el análisis paso a paso de los modelos K-Means y DBSCAN, PCA, T-SNE.
  * Figures/ModelosNoSupervisados: Resultados visuales, gráficos comparativos y matrices de confusión.
-  * README.md: Descripción general del proyecto.
+ * Notebooks/ModelosDeExplicabilidad: ipynb principal con entrenamiento y explicabilidad del Random Forest con SHAP y LIME.
+ * Figures/ModelosDeExplicabilidad: Resultados visuales, gráficos comparativos de SHAP y LIME.
+ * README.md: Descripción general del proyecto.
 
 # Metodología Clasificación de Fashion-MNIST con SVM, Random Forest y Árbol de Decisión
 
@@ -73,7 +90,26 @@ URLs Dataset
    
 3. Modelos de clustering: K-Means (K=10): agrupación basada en distancias, DBSCAN: agrupación basada en densidad y detección de ruido.
 
-4. Evaluación y visualización: Uso de métricas de silueta e inercia, visualización de resultados con t-SNE y análisis cualitativo de pureza
+4. Evaluación y visualización: Uso de métricas de silueta e inercia, visualización de resultados con t-SNE y análisis cualitativo de pureza.
+
+# Metodología Explicabilidad con Random Forest, LIME y SHAP
+
+1. Carga y preprocesamiento de datos: Normalización y transformación de imágenes a vectores de 784 características.
+
+2. Entrenamiento del modelo Random Forest.
+   
+3. Evaluación inicial mediante métricas estándar como accuracy y matriz de confusión.
+
+4. Aplicación de LIME:
+   * Generación de explicaciones para imágenes individuales.
+   * Resaltado de regiones relevantes por clase.
+     
+5. Aplicación de SHAP:
+   * Cálculo de valores Shapley.
+   * Importancia global de características.
+   * Mapas de calor por contribución de píxeles.
+
+6. Comparación de técnicas de explicabilidad, construcción de conclusiones técnicas y éticas.
 
 # Resultados y comparación modelos suspervisados
 
@@ -99,6 +135,30 @@ Random Forest mostró el mejor desempeño general gracias a su capacidad para co
 * DBSCAN detectó clústeres densos de alta pureza y reveló outliers significativos.
 * La visualización con t-SNE confirmó las estructuras y separaciones detectadas.
 
+# Resultados y comparación modelos no supervisados
+
+Rendimiento del modelo
+  * Accuracy aproximado: ~85%
+  * Buen equilibrio entre bias y varianza
+  * Comportamiento estable en validación
+
+Explicabilidad con LIME
+  * Muestra regiones críticas para imágenes individuales.
+  * Útil para auditorías caso a caso.
+  * Revela que el modelo se enfoca mayormente en bordes y contornos de las prendas.
+
+Explicabilidad con SHAP
+  * Explica el impacto global y local de cada píxel.
+  * Valores Shapley coherentes con la estructura visual.
+  * Permite analizar sesgos y patrones generales.
+
+        Técnica	           Ventajas                                                     Limitaciones 
+        ------------------------------------------------------------------------------------------------------------------
+        LIME 	         Muy útil para explicaciones locales, visualizaciones claras   	Menos estable globalmente	     	       
+        SHAP             Análisis global + local, matemáticamente robusto	            Computacionalmente más costoso         
+        Random Forest    Robusto y estable	                                            Requiere herramientas externas
+                                                                                        para interpretabilidad	        
+        
 # Ejecución del proyecto
 
 1. Clonar el repositorio.
@@ -147,6 +207,18 @@ Futuras Mejoras
 * Queda claro que no todas las clases de Fashion-MNIST son separables de forma natural bajo técnicas no supervisadas simples: ciertas prendas se traslapan en apariencia y requieren enfoques más sofisticados para diferenciarse. Aun así, combinar PCA y clustering resultó útil: PCA mejoró la velocidad y efectividad del clustering, y la inspección visual con T-SNE corroboró qué tan bien se formaron los grupos. De hecho, aplicar PCA permitió que DBSCAN encontrara más de un clúster en vez de un único clúster gigante, mostrando el valor de reducir el ruido dimensional.
 
 * Resumiendo, K-Means es adecuado para obtener una vista general estructurada del catálogo (especialmente cuando se espera un número de categorías fijo), mientras que DBSCAN es valioso para depurar dicho catálogo identificando casos atípicos y agrupando solo lo más homogéneo. La combinación de ambos enfoques, junto con reducción de dimensionalidad y un ajuste prudente de parámetros, permite lograr una visualización más correcta del conjunto de imágenes y apoyar la limpieza del catálogo de forma fundamentada. Cada técnica tiene fortalezas y limitaciones claras, por lo que una estrategia híbrida e iterativa (apoyada en visualización y en conocimiento del dominio) resulta ser la vía más eficaz para mejorar la organización del catálogo y minimizar errores en la clasificación de sus prendas.
+
+# Conclusiones y Recomendaciones futuras para la explicabilidad con Random Forest, LIME y SHAP
+
+* La explicabilidad es esencial para validar modelos utilizados en contextos reales.
+* LIME y SHAP permiten abrir la caja negra del Random Forest.
+* El modelo aprende patrones coherentes, pero requiere auditoría continua para evitar sobredependencia en regiones poco relevantes.
+* La combinación de ambas técnicas ofrece una visión completa del razonamiento del modelo.
+* Fashion-MNIST demuestra que incluso modelos tradicionales pueden lograr interpretabilidad valiosa.
+* Implementar PCA para acelerar interpretabilidad.
+* Entrenar modelos basados en redes neuronales convolucionales (CNN).
+* Aplicar técnicas como Grad-CAM para visión profunda.
+* Integrar pipelines de explicabilidad desde el diseño del modelo.
 
 # Autores
 
